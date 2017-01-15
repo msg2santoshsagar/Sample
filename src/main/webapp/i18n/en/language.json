@@ -1,0 +1,11 @@
+{
+    "sampleApp": {
+        "Language" : {
+            "null": "",
+            "HINDI": "HINDI",
+            "ENGLISH": "ENGLISH",
+            "BANGLA": "BANGLA",
+            "BHOJPURI": "BHOJPURI"
+        }
+    }
+}

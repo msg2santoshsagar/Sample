@@ -1,0 +1,43 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "category",
+            "otherEntityName": "noteCategory",
+            "otherEntityRelationshipName": "notes"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "place",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "phoneNumber",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161104182017",
+    "entityTableName": "notes",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "employee",
+            "otherEntityName": "employee",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "job",
+            "otherEntityName": "job",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "jobHistory"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "startDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "language",
+            "fieldType": "Language",
+            "fieldValues": "FRENCH,ENGLISH,SPANISH"
+        }
+    ],
+    "changelogDate": "20161014185705",
+    "entityTableName": "job_history",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "emp"
+}

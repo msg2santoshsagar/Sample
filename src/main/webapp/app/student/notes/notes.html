@@ -1,0 +1,62 @@
+<div>
+    <h2 data-translate="sampleApp.notes.home.title">Notes</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="notes.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="sampleApp.notes.home.createLabel">
+                        Create new Notes
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="sampleApp.notes.title">Title</span></th>
+                    <th><span data-translate="sampleApp.notes.date">Date</span></th>
+                    <th><span data-translate="sampleApp.notes.place">Place</span></th>
+                    <th><span data-translate="sampleApp.notes.phoneNumber">Phone Number</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="notes in vm.notes track by notes.id">
+                    <td><a ui-sref="notes-detail({id:notes.id})">{{notes.id}}</a></td>
+                    <td>{{notes.title}}</td>
+                        <td>{{notes.date | date:'mediumDate'}}</td>
+                    <td>{{notes.place}}</td>
+                    <td>{{notes.phoneNumber}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="notes-detail({id:notes.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="notes.edit({id:notes.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="notes.delete({id:notes.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

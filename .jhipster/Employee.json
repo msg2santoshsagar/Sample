@@ -1,0 +1,60 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "job",
+            "otherEntityName": "jobHistory",
+            "otherEntityRelationshipName": "employee"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "firstName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "lastName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "phoneNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateOfBirth",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "hireDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "salary",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "commissionPct",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20161014185704",
+    "entityTableName": "employee",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "emp"
+}

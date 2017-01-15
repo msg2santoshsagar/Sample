@@ -1,0 +1,56 @@
+<script type="text/javascript">
+    $(".selectBox").select2();
+</script>
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myNoteCategoryLabel" data-translate="sampleApp.noteCategory.home.createOrEditLabel">Create or edit a Note Category</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.noteCategory.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.noteCategory.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="sampleApp.noteCategory.category" for="field_category">Category</label>
+            <input type="text" class="form-control" name="category" id="field_category"
+                    ng-model="vm.noteCategory.category"
+                    required />
+            <div ng-show="editForm.category.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.category.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="sampleApp.noteCategory.language" for="field_language">Language</label>
+            <select class="form-control" name="language" ng-model="vm.noteCategory.language" id="field_language">
+                <option value="HINDI" data-translate="sampleApp.Language.HINDI">HINDI</option>
+                <option value="ENGLISH" data-translate="sampleApp.Language.ENGLISH">ENGLISH</option>
+                <option value="BANGLA" data-translate="sampleApp.Language.BANGLA">BANGLA</option>
+                <option value="BHOJPURI" data-translate="sampleApp.Language.BHOJPURI">BHOJPURI</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="sampleApp.noteCategory.notes" for="field_notes">Notes</label>
+            <select class="form-control selectBox" style="width:100%"  id="field_notes" name="notes" ng-model="vm.noteCategory.notes" ng-options="notes as notes.id for notes in vm.notes track by notes.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,65 @@
+
+
+
+<div>
+    <h2 data-translate="sampleApp.noteCategory.home.title">Note Categories</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="note-category.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="sampleApp.noteCategory.home.createLabel">
+                        Create new Note Category
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="sampleApp.noteCategory.category">Category</span></th>
+                    <th><span data-translate="sampleApp.noteCategory.language">Language</span></th>
+                    <th><span data-translate="sampleApp.noteCategory.notes">Notes</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="noteCategory in vm.noteCategories track by noteCategory.id">
+                    <td><a ui-sref="note-category-detail({id:noteCategory.id})">{{noteCategory.id}}</a></td>
+                    <td>{{noteCategory.category}}</td>
+                    <td data-translate="{{'sampleApp.Language.' + noteCategory.language}}">{{noteCategory.language}}</td>
+                    <td>
+                        <a ui-sref="notes-detail({id:noteCategory.notes.id})">{{noteCategory.notes.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="note-category-detail({id:noteCategory.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="note-category.edit({id:noteCategory.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="note-category.delete({id:noteCategory.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

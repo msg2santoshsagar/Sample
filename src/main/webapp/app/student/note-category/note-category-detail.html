@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span data-translate="sampleApp.noteCategory.detail.title">Note Category</span> {{vm.noteCategory.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="sampleApp.noteCategory.category">Category</span></dt>
+        <dd>
+            <span>{{vm.noteCategory.category}}</span>
+        </dd>
+        <dt><span data-translate="sampleApp.noteCategory.language">Language</span></dt>
+        <dd>
+            <span data-translate="{{'sampleApp.Language.' + vm.noteCategory.language}}">{{vm.noteCategory.language}}</span>
+        </dd>
+        <dt><span data-translate="sampleApp.noteCategory.notes">Notes</span></dt>
+        <dd>
+            <a ui-sref="notes-detail({id:vm.noteCategory.notes.id})">{{vm.noteCategory.notes.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="note-category-detail.edit({id:vm.noteCategory.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

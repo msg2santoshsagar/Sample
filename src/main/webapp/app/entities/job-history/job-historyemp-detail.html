@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="sampleApp.jobHistory.detail.title">Job History</span> {{vm.jobHistory.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="sampleApp.jobHistory.startDate">Start Date</span></dt>
+        <dd>
+            <span>{{vm.jobHistory.startDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="sampleApp.jobHistory.endDate">End Date</span></dt>
+        <dd>
+            <span>{{vm.jobHistory.endDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="sampleApp.jobHistory.language">Language</span></dt>
+        <dd>
+            <span data-translate="{{'sampleApp.Language.' + vm.jobHistory.language}}">{{vm.jobHistory.language}}</span>
+        </dd>
+        <dt><span data-translate="sampleApp.jobHistory.employee">Employee</span></dt>
+        <dd>
+            <a ui-sref="employeeemp-detail({id:vm.jobHistory.employee.id})">{{vm.jobHistory.employee.id}}</a>
+        </dd>
+        <dt><span data-translate="sampleApp.jobHistory.job">Job</span></dt>
+        <dd>
+            <a ui-sref="jobemp-detail({id:vm.jobHistory.job.id})">{{vm.jobHistory.job.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="job-historyemp-detail.edit({id:vm.jobHistory.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

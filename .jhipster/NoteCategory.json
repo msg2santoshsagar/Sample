@@ -1,0 +1,30 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "notes",
+            "otherEntityName": "notes",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "category",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "language",
+            "fieldType": "Language",
+            "fieldValues": "HINDI,ENGLISH,BANGLA,BHOJPURI"
+        }
+    ],
+    "changelogDate": "20161104182018",
+    "entityTableName": "note_category",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

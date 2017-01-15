@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="sampleApp.notes.detail.title">Notes</span> {{vm.notes.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="sampleApp.notes.title">Title</span></dt>
+        <dd>
+            <span>{{vm.notes.title}}</span>
+        </dd>
+        <dt><span data-translate="sampleApp.notes.date">Date</span></dt>
+        <dd>
+            <span>{{vm.notes.date | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="sampleApp.notes.place">Place</span></dt>
+        <dd>
+            <span>{{vm.notes.place}}</span>
+        </dd>
+        <dt><span data-translate="sampleApp.notes.phoneNumber">Phone Number</span></dt>
+        <dd>
+            <span>{{vm.notes.phoneNumber}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="notes-detail.edit({id:vm.notes.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

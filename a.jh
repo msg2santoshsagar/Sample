@@ -1,0 +1,18 @@
+
+entity Notes {
+	title String required,
+	Date LocalDate required,
+	place String required,
+	phoneNumber String
+}
+entity NoteCategory {
+	category String required,
+    Language Language
+}
+enum Language {
+    HINDI, ENGLISH, BANGLA ,BHOJPURI
+}
+relationship OneToMany {
+	Notes{category} to NoteCategory
+}
+

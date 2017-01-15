@@ -1,0 +1,32 @@
+{
+  "generator-jhipster": {
+    "jhipsterVersion": "3.9.1",
+    "baseName": "SAMPLE",
+    "packageName": "com.sample",
+    "packageFolder": "com/sample",
+    "serverPort": "8080",
+    "authenticationType": "session",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "buildTool": "maven",
+    "enableSocialSignIn": false,
+    "rememberMeKey": "6de00f9c8ace0c7beb3a83c2ba5134adb9c8af94",
+    "useSass": true,
+    "applicationType": "monolith",
+    "testFrameworks": [
+      "gatling"
+    ],
+    "jhiPrefix": "jhi",
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": [
+      "en"
+    ]
+  }
+}
